@@ -7,10 +7,12 @@
 //
 
 #import "EditViewController.h"
+#import "MyData.h"
 
 @interface EditViewController ()
 {
     UITextField *tf;
+    UITextField *tf2;
 }
 @end
 
@@ -32,11 +34,22 @@
     tf.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:tf];
     tf.text = _text;
+    
+    tf2 = [[UITextField alloc] initWithFrame:CGRectMake(30, 100, 100, 30)];
+    tf2.backgroundColor = [UIColor whiteColor];
+    tf2.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:tf2];
+    
+    tf2.text = [[MyData sharedInstance] name];
 
 }
 
 - (void)backToHome {
     NSLog(@"back to Home");
+    
+    [[MyData sharedInstance] setName:tf2.text];
+    NSLog(@"[MyData sharedInstance].name = %@", tf2.text);
+
     // [self.navigationController popViewControllerAnimated:YES];
     if (self.delegate) {
         BOOL responds = [self.delegate respondsToSelector:NSSelectorFromString(@"editViewDidReturnWith:")];
@@ -47,6 +60,12 @@
             [self.delegate editViewDidReturnWith:tf.text];
         }
     }
+    
+    if (self.onReturnBlk) {
+        NSString *formatedName = [NSString stringWithFormat:@"returned name %@", tf2.text];
+        self.onReturnBlk(formatedName);
+    }
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

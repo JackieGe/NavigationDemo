@@ -8,10 +8,14 @@
 
 #import "FirstViewController.h"
 #import "EditViewController.h"
+#import "MyData.h"
 
 @interface FirstViewController () <EditViewDelegate>
 {
     UITextField *tf;
+    
+    UITextField *tf2;
+
 }
 @end
 
@@ -25,7 +29,7 @@
     UIImage *rightImage = [UIImage imageNamed:@"Edit"];
     rightImage = [rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(goToCategory)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(goToEdit)];
     
     /*
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Category"] landscapeImagePhone:[UIImage imageNamed:@"Category"] style:UIBarButtonItemStyleDone target:self action:@selector(goToCategory)];
@@ -36,19 +40,40 @@
     tf.backgroundColor = [UIColor whiteColor];
     tf.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:tf];
+    
+    tf2 = [[UITextField alloc] initWithFrame:CGRectMake(30, 100, 100, 30)];
+    tf2.backgroundColor = [UIColor whiteColor];
+    tf2.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:tf2];
+
 }
 
 - (void)editViewDidReturnWith:(NSString *)text {
     tf.text = text;
+    tf2.text = [[MyData sharedInstance] name];
+    
+    // [[MyData sharedInstance] setName:tf2.text];
+    NSLog(@"[MyData sharedInstance].name = %@ in root", [[MyData sharedInstance] name]);
 }
 
-- (void)goToCategory {
-    NSLog(@"Will go to Category page");
+- (void)goToEdit {
+    NSLog(@"Will go to edit page");
     EditViewController *edit = [[EditViewController alloc] init];
     edit.text = tf.text;
     edit.delegate = self;
+    
+    __weak FirstViewController *weakSelf = self;
+    edit.onReturnBlk = ^(NSString *text) {
+        NSLog(@"The text returned: %@", text);
+        //此处引用
+        //weakSelf.
+    };
+    
     [self.navigationController pushViewController:edit animated:YES];
+    
 
+    MyData *myData = [MyData sharedInstance];
+    myData.name = tf2.text;
 }
 
 - (void)didReceiveMemoryWarning {

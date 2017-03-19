@@ -17,6 +17,7 @@
 		8C8B06361E7E66AA008CDD69 /* home-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B06341E7E66AA008CDD69 /* home-32.png */; };
 		8C8B063A1E7E7184008CDD69 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B06391E7E7184008CDD69 /* EditViewController.m */; };
 		8C8B063C1E7E71DE008CDD69 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B063B1E7E71DE008CDD69 /* Edit.png */; };
+		8C8B063F1E7E7B2F008CDD69 /* MyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B063E1E7E7B2F008CDD69 /* MyData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		8C8B06381E7E7184008CDD69 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		8C8B06391E7E7184008CDD69 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		8C8B063B1E7E71DE008CDD69 /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
+		8C8B063D1E7E7B2F008CDD69 /* MyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyData.h; sourceTree = "<group>"; };
+		8C8B063E1E7E7B2F008CDD69 /* MyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				8C8B062B1E7E60FB008CDD69 /* FirstViewController.m */,
 				8C8B06381E7E7184008CDD69 /* EditViewController.h */,
 				8C8B06391E7E7184008CDD69 /* EditViewController.m */,
+				8C8B063D1E7E7B2F008CDD69 /* MyData.h */,
+				8C8B063E1E7E7B2F008CDD69 /* MyData.m */,
 			);
 			path = NavigationDemo;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				8C8B061B1E7E60D6008CDD69 /* ViewController.m in Sources */,
 				8C8B06181E7E60D6008CDD69 /* AppDelegate.m in Sources */,
 				8C8B06151E7E60D6008CDD69 /* main.m in Sources */,
+				8C8B063F1E7E7B2F008CDD69 /* MyData.m in Sources */,
 				8C8B063A1E7E7184008CDD69 /* EditViewController.m in Sources */,
 				8C8B062C1E7E60FB008CDD69 /* FirstViewController.m in Sources */,
 			);

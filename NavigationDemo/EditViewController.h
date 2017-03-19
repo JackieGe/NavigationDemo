@@ -18,4 +18,5 @@
 @interface EditViewController : UIViewController
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, weak) id<EditViewDelegate> delegate;
+@property (nonatomic, copy) void(^onReturnBlk)(NSString *str);
 @end
