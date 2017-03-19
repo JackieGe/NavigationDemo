@@ -66,6 +66,10 @@
         self.onReturnBlk(formatedName);
     }
     
+    NSDictionary *contactInfo = @{@"name":@"Tom", @"age":@30};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"999" object:@"Contact" userInfo:contactInfo];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

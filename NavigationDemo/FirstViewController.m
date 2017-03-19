@@ -45,7 +45,16 @@
     tf2.backgroundColor = [UIColor whiteColor];
     tf2.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:tf2];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMessage:) name:@"999" object:nil];
 
+}
+
+- (void)receiveMessage:(NSNotification *)notif {
+    NSLog(@"Received: %@", notif.object);
+    NSDictionary *contactInfo = (NSDictionary *)notif.userInfo;
+    NSLog(@"name = %@", contactInfo[@"name"]);
+    NSLog(@"age = %@", contactInfo[@"age"]);
 }
 
 - (void)editViewDidReturnWith:(NSString *)text {
