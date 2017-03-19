@@ -7,10 +7,12 @@
 //
 
 #import "FirstViewController.h"
-#import "CategoryViewController.h"
+#import "EditViewController.h"
 
-@interface FirstViewController ()
-
+@interface FirstViewController () <EditViewDelegate>
+{
+    UITextField *tf;
+}
 @end
 
 @implementation FirstViewController
@@ -20,7 +22,7 @@
     self.view.backgroundColor = [UIColor redColor];
     self.navigationItem.title = @"Home";
     
-    UIImage *rightImage = [UIImage imageNamed:@"Category-32"];
+    UIImage *rightImage = [UIImage imageNamed:@"Edit"];
     rightImage = [rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(goToCategory)];
@@ -29,12 +31,23 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Category"] landscapeImagePhone:[UIImage imageNamed:@"Category"] style:UIBarButtonItemStyleDone target:self action:@selector(goToCategory)];
      */
     // Do any additional setup after loading the view.
+    
+    tf = [[UITextField alloc] initWithFrame:CGRectMake(30, 60, 100, 30)];
+    tf.backgroundColor = [UIColor whiteColor];
+    tf.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:tf];
+}
+
+- (void)editViewDidReturnWith:(NSString *)text {
+    tf.text = text;
 }
 
 - (void)goToCategory {
     NSLog(@"Will go to Category page");
-    CategoryViewController *category = [[CategoryViewController alloc] init];
-    [self.navigationController pushViewController:category animated:YES];
+    EditViewController *edit = [[EditViewController alloc] init];
+    edit.text = tf.text;
+    edit.delegate = self;
+    [self.navigationController pushViewController:edit animated:YES];
 
 }
 

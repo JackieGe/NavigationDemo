@@ -14,9 +14,9 @@
 		8C8B06201E7E60D6008CDD69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B061F1E7E60D6008CDD69 /* Assets.xcassets */; };
 		8C8B06231E7E60D6008CDD69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B06211E7E60D6008CDD69 /* LaunchScreen.storyboard */; };
 		8C8B062C1E7E60FB008CDD69 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B062B1E7E60FB008CDD69 /* FirstViewController.m */; };
-		8C8B062F1E7E6339008CDD69 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B062E1E7E6339008CDD69 /* CategoryViewController.m */; };
 		8C8B06361E7E66AA008CDD69 /* home-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B06341E7E66AA008CDD69 /* home-32.png */; };
-		8C8B06371E7E66AA008CDD69 /* Category-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B06351E7E66AA008CDD69 /* Category-32.png */; };
+		8C8B063A1E7E7184008CDD69 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B06391E7E7184008CDD69 /* EditViewController.m */; };
+		8C8B063C1E7E71DE008CDD69 /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B063B1E7E71DE008CDD69 /* Edit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +32,10 @@
 		8C8B06241E7E60D6008CDD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C8B062A1E7E60FB008CDD69 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		8C8B062B1E7E60FB008CDD69 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		8C8B062D1E7E6339008CDD69 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
-		8C8B062E1E7E6339008CDD69 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		8C8B06341E7E66AA008CDD69 /* home-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-32.png"; sourceTree = "<group>"; };
-		8C8B06351E7E66AA008CDD69 /* Category-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Category-32.png"; sourceTree = "<group>"; };
+		8C8B06381E7E7184008CDD69 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		8C8B06391E7E7184008CDD69 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		8C8B063B1E7E71DE008CDD69 /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 				8C8B06131E7E60D6008CDD69 /* Supporting Files */,
 				8C8B062A1E7E60FB008CDD69 /* FirstViewController.h */,
 				8C8B062B1E7E60FB008CDD69 /* FirstViewController.m */,
-				8C8B062D1E7E6339008CDD69 /* CategoryViewController.h */,
-				8C8B062E1E7E6339008CDD69 /* CategoryViewController.m */,
+				8C8B06381E7E7184008CDD69 /* EditViewController.h */,
+				8C8B06391E7E7184008CDD69 /* EditViewController.m */,
 			);
 			path = NavigationDemo;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 			children = (
 				8C8B06141E7E60D6008CDD69 /* main.m */,
 				8C8B06341E7E66AA008CDD69 /* home-32.png */,
-				8C8B06351E7E66AA008CDD69 /* Category-32.png */,
+				8C8B063B1E7E71DE008CDD69 /* Edit.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,9 +156,9 @@
 			files = (
 				8C8B06231E7E60D6008CDD69 /* LaunchScreen.storyboard in Resources */,
 				8C8B06361E7E66AA008CDD69 /* home-32.png in Resources */,
+				8C8B063C1E7E71DE008CDD69 /* Edit.png in Resources */,
 				8C8B06201E7E60D6008CDD69 /* Assets.xcassets in Resources */,
 				8C8B061E1E7E60D6008CDD69 /* Main.storyboard in Resources */,
-				8C8B06371E7E66AA008CDD69 /* Category-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8B061B1E7E60D6008CDD69 /* ViewController.m in Sources */,
-				8C8B062F1E7E6339008CDD69 /* CategoryViewController.m in Sources */,
 				8C8B06181E7E60D6008CDD69 /* AppDelegate.m in Sources */,
 				8C8B06151E7E60D6008CDD69 /* main.m in Sources */,
+				8C8B063A1E7E7184008CDD69 /* EditViewController.m in Sources */,
 				8C8B062C1E7E60FB008CDD69 /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
